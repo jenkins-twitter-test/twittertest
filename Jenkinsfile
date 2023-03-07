@@ -11,6 +11,7 @@ pipeline {
             steps {
 
                 echo 'Hello World'
+                touch "testfile.txt"
 
             }
 
