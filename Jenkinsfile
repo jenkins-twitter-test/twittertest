@@ -10,8 +10,10 @@ pipeline {
 
             steps {
 
-                echo 'Hello World'
-                sh 'touch "createfile.txt"'
+                echo '---------------Building---------------'
+                sh 'mvn clean deploy -Dmaven.test.skip=true'
+                echo '------------Build complete-------------'
+ 
 
             }
 
