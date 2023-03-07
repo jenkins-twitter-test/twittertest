@@ -1,6 +1,8 @@
 pipeline {
 
-    agent valaxy
+    agent {
+        node(label: 'valaxy')
+    }
 
     stages {
 
