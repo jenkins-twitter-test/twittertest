@@ -16,13 +16,11 @@ pipeline {
 
                 echo '---------------Building---------------'
                 sh 'mvn clean deploy -Dmaven.test.skip=true'
-                echo '------------Build complete-------------'
+                echo '------------Build completed-------------'
  
 
             }
 
         }
-
     }
-
 }
