@@ -1,15 +1,19 @@
 pipeline {
 
-    agent{
-        label valaxy
-    }
+    agent any
 
-    stages{
+    stages {
 
-        stage ('git clone')
+        stage('Hello') {
 
-            steps{                
-                echo "hello world"
+            steps {
+
+                echo 'Hello World'
+
             }
+
+        }
+
     }
+
 }
