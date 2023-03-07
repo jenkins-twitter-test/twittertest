@@ -11,7 +11,7 @@ pipeline {
             steps {
 
                 echo 'Hello World'
-                touch "testfile.txt"
+                sh 'touch "createfile.txt"'
 
             }
 
