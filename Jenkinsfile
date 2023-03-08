@@ -27,7 +27,6 @@ pipeline {
                 sh 'mvn surefire-report:report'
                 echo '-------------Unit testing completed successfully----------------'
             }
-
         }
 
         stage('Sonar Analysis'){            
