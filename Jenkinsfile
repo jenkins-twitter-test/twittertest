@@ -29,6 +29,7 @@ pipeline {
                 }
 
             steps{
+                echo "testing"
                 echo '---------- Sonar Analysis started -----------' 
 
                 withSonarQubeEnv('SonarQubeServer'){
