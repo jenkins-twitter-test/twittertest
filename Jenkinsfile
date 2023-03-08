@@ -23,8 +23,7 @@ pipeline {
 
         }
 
-        stage('Sonar Analysis'){
-            
+        stage('Sonar Analysis'){            
             environment {
                     sonarscanner = tool 'SonarScanner'
                 }
@@ -33,6 +32,7 @@ pipeline {
                 echo '---------- Sonar Analysis started -----------' 
 
                 withSonarQubeEnv('SonarQubeServer'){
+                    //sonar server name in master
                     sh "${sonarscanner}/bin/sonar-scanner"
                 }
                 echo '---------- Sonar Analysis stopped -----------'                                               
