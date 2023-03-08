@@ -12,11 +12,20 @@ pipeline {
 
         stage('Build') {
 
-            steps {
-                echo "test web hooking"     
+            steps {              
                 echo '---------------Building---------------'
                 sh 'mvn clean deploy -Dmaven.test.skip=true'
                 echo '------------Build completed-------------'
+            }
+
+        }
+
+        stage('Unit tests') {
+
+            steps {
+                echo '-------------------Unit testing started------------------------'
+                sh 'mvn surefire-report:report'
+                echo '-------------Unit testing completed successfully----------------'
             }
 
         }
