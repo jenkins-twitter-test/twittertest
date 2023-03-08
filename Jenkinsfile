@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo "test web hooking"     
                 echo '---------------Building---------------'
-                sh 'mvn clean deploy -Dmaven.test.skip=true'
+                sh 'mvn clean deploy -Dmaven.test.skip=true'git 
                 echo '------------Build completed-------------'
             }
 
