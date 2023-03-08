@@ -10,16 +10,6 @@ pipeline {
 
     stages {
 
-        stage('Build') {
-
-            steps {              
-                echo '---------------Building---------------'
-                sh 'mvn clean deploy -Dmaven.test.skip=true'
-                echo '------------Build completed-------------'
-            }
-
-        }
-
         stage('Unit tests') {
 
             steps {
@@ -58,10 +48,18 @@ pipeline {
                         }
                     }  
                     echo '<--------------- Quality Gate Analysis Ends  --------------->'
-
                 }
-
             }
+        }
+
+        stage('Build') {
+
+            steps {              
+                echo '---------------Building---------------'
+                sh 'mvn clean deploy -Dmaven.test.skip=true'
+                echo '------------Build completed-------------'
+            }
+
         }
     }
 }  
