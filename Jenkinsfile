@@ -1,3 +1,5 @@
+def registry = 'https://vpro.jfrog.io'      
+
 pipeline {
 
     tools{
@@ -60,9 +62,7 @@ pipeline {
                 echo '------------Build completed-------------'
             }
 
-        }
-
-        def registry = 'https://vpro.jfrog.io'        
+        }         
         
         stage("Jar Publish") {
 
