@@ -94,11 +94,15 @@ pipeline {
             }   
         }   
 
-        stage('Docker Build') {
-            steps{                                
-                echo '<--------------- Docker Build Started --------------->'
-                dockerImage = docker.build(ImageName + ":" + Version)
-                echo '<--------------- Docker Build Ended --------------->'
+        stage('Building Image') {
+            steps{  
+                script(){
+                    echo '<--------------- Docker Build Started --------------->'
+                    dockerImage = docker.build(ImageName + ":" + Version)
+                    echo '<--------------- Docker Build Ended --------------->'
+
+                }                              
+                
             }
         }                                
             
