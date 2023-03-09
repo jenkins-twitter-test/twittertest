@@ -111,9 +111,9 @@ pipeline {
                 script(){
                     echo '<--------------- Docker Publish Started --------------->'  
                     docker.withRegistry(registry,'jfrog-token'){
-                        dockerImage.Push()
-                    echo '<--------------- Docker Publish Ended --------------->'  
+                        dockerImage.Push()                    
                     }
+                    echo '<--------------- Docker Publish Ended --------------->'  
                 }
             }
         }            
