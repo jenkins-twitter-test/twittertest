@@ -98,7 +98,7 @@ pipeline {
             steps{  
                 script(){
                     echo '<--------------- Docker Build Started --------------->'
-                    dockerImage = docker.build(ImageName + ":" + Version)
+                    def dockerImage = docker.build(ImageName + ":" + Version)
                     echo '<--------------- Docker Build Ended --------------->'
 
                 }                              
@@ -106,16 +106,18 @@ pipeline {
             }
         } 
 
-        stage('Publish Image') {
-            steps{
-                script(){
-                    echo '<--------------- Docker Publish Started --------------->'  
-                    docker.withRegistry(registry,'jfrog-token'){
-                        dockerImage.Push()                    
-                    }
-                    echo '<--------------- Docker Publish Ended --------------->'  
+
+        stage (" Publish Image "){
+            steps {
+                script {
+                echo '<--------------- Docker Publish Started --------------->'  
+                    docker.withRegistry(registry, 'jfrog-token'){
+                        dockerImage.push()
+                    }    
+                echo '<--------------- Docker Publish Ended --------------->'  
                 }
             }
-        }            
+        }
+
     }
 }  
