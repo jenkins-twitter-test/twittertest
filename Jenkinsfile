@@ -1,4 +1,6 @@
-def registry = 'https://vpro.jfrog.io'      
+def registry = 'https://vpro.jfrog.io'    
+def ImageName = 'vpro.jfrog.io/vpro-docker/vproapp'
+def Version = '2.0.2'  
 
 pipeline {
 
@@ -92,8 +94,7 @@ pipeline {
             }   
         }   
 
-        def ImageName = 'vpro.jfrog.io/vpro-docker/vproapp'
-        def Version = '2.0.2'
+
         stage('Docker Build')                                   
             steps{                                
                 echo '<--------------- Docker Build Started --------------->'
