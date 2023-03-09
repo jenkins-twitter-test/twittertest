@@ -92,15 +92,10 @@ pipeline {
             }   
         }   
 
-        
-        stage('Docker Build')
-            
-            
-            
-            steps{
-                def ImageName = 'vpro.jfrog.io/vpro-docker/vproapp'
-                def Version = '2.0.2'
-                
+        def ImageName = 'vpro.jfrog.io/vpro-docker/vproapp'
+        def Version = '2.0.2'
+        stage('Docker Build')                                   
+            steps{                                
                 echo '<--------------- Docker Build Started --------------->'
                 dockerImage = docker.build(ImageName + ":" + Version)
                 echo '<--------------- Docker Build Ended --------------->'
