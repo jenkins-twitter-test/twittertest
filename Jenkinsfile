@@ -94,12 +94,13 @@ pipeline {
             }   
         }   
 
-
-        stage('Docker Build')                                   
+        stage('Docker Build') {
             steps{                                
                 echo '<--------------- Docker Build Started --------------->'
                 dockerImage = docker.build(ImageName + ":" + Version)
                 echo '<--------------- Docker Build Ended --------------->'
             }
+        }                                
+            
     }
 }  
