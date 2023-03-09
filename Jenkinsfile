@@ -57,7 +57,7 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Build Artifact') {
 
             steps {              
                 echo '---------------Building---------------'
@@ -94,7 +94,7 @@ pipeline {
             }   
         }   
 
-        stage('Building Image') {
+        stage('Build Image') {
             steps{  
                 script(){
                     echo '<--------------- Docker Build Started --------------->'
@@ -104,7 +104,18 @@ pipeline {
                 }                              
                 
             }
-        }                                
-            
+        } 
+
+        stage('Publish Image') {
+            steps{
+                script(){
+                    echo '<--------------- Docker Publish Started --------------->'  
+                    docker.withRegistry(registry,'jfrog-token'){
+                        dockerImage.Push()
+                    echo '<--------------- Docker Publish Ended --------------->'  
+                    }
+                }
+            }
+        }            
     }
 }  
