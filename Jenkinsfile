@@ -16,7 +16,7 @@ pipeline {
 
             steps {
                 echo '-------------------Unit testing started------------------------'
-                echo "test"
+                echo "test2"
                 // sh 'mvn surefire-report:report'
                 echo '-------------Unit testing completed successfully----------------'
             }
