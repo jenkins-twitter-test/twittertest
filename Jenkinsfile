@@ -125,7 +125,7 @@ pipeline {
                     echo '<---------- Deploy Started ---------->'  
                     sh 'sudo chmod +x deploy.sh'
                     sh './deploy.sh'
-                    echo '<------ Deploy Ended Successfully ------>'  
+                    echo '<------ Deploy is Successfully ------>'  
                 }
             }
         }
