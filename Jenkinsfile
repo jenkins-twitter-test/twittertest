@@ -119,13 +119,24 @@ pipeline {
             }
         }
 
+        // stage (" Deploy Image"){
+        //     steps{
+        //         script {
+        //             echo '<---------- Deploy Started ---------->'  
+        //             sh 'sudo chmod +x deploy.sh'
+        //             sh './deploy.sh'
+        //             echo '<------ Deploy is Successfully ------>'  
+        //         }
+        //     }
+        // }
+
+        // Deploy with Help
         stage (" Deploy Image"){
             steps{
                 script {
-                    echo '<---------- Deploy Started ---------->'  
-                    sh 'sudo chmod +x deploy.sh'
-                    sh './deploy.sh'
-                    echo '<------ Deploy is Successfully ------>'  
+                    echo '<---------- Deploy with Help Started ---------->'  
+                    sh 'helm install vproapp-testing vproapp-2.0.2.tgz'
+                    echo '<------ Deploy with Help is Successfully ------>'  
                 }
             }
         }
